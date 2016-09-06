@@ -16,7 +16,7 @@ RUN set -xe \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends $runtimeDeps \
 	&& apt-get install -y --no-install-recommends $buildDeps  curl\
-	&& curl -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" \
+	&& curl -k -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" \
 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - \
 	&& mkdir -p /usr/src/otp-src \
 	&& tar -xzf otp-src.tar.gz -C /usr/src/otp-src --strip-components=1 \
@@ -38,7 +38,7 @@ RUN set -xe \
 	&& REBAR_DOWNLOAD_URL="https://github.com/rebar/rebar/archive/${REBAR_VERSION##*@}.tar.gz" \
 	&& REBAR_DOWNLOAD_SHA256="ed2a49300f2f8ae7c95284e53e95dd85430952d2843ce224a17db2b312964400" \
 	&& mkdir -p /usr/src/rebar-src \
-	&& curl -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" \
+	&& curl -k -fSL -o rebar-src.tar.gz "$REBAR_DOWNLOAD_URL" \
 	&& echo "$REBAR_DOWNLOAD_SHA256 rebar-src.tar.gz" | sha256sum -c - \
 	&& tar -xzf rebar-src.tar.gz -C /usr/src/rebar-src --strip-components=1 \
 	&& rm rebar-src.tar.gz \
@@ -53,7 +53,7 @@ RUN set -xe \
 	&& REBAR3_DOWNLOAD_URL="https://github.com/erlang/rebar3/archive/${REBAR3_VERSION##*@}.tar.gz" \
 	&& REBAR3_DOWNLOAD_SHA256="78ad27372eea6e215790e161ae46f451c107a58a019cc7fb4551487903516455" \
 	&& mkdir -p /usr/src/rebar3-src \
-	&& curl -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" \
+	&& curl -k -fSL -o rebar3-src.tar.gz "$REBAR3_DOWNLOAD_URL" \
 	&& echo "$REBAR3_DOWNLOAD_SHA256 rebar3-src.tar.gz" | sha256sum -c - \
 	&& tar -xzf rebar3-src.tar.gz -C /usr/src/rebar3-src --strip-components=1 \
 	&& rm rebar3-src.tar.gz \
