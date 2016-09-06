@@ -15,7 +15,7 @@ RUN set -xe \
 			libsctp-dev' \
 	&& apt-get update \
 	&& apt-get install -y --no-install-recommends $runtimeDeps \
-	&& apt-get install -y --no-install-recommends $buildDeps  curl autoconf automake libtool\
+	&& apt-get install -y --no-install-recommends $buildDeps  curl autoconf automake libtool make g++\
 	&& curl -k -fSL -o otp-src.tar.gz "$OTP_DOWNLOAD_URL" \
 	&& echo "$OTP_DOWNLOAD_SHA256 otp-src.tar.gz" | sha256sum -c - \
 	&& mkdir -p /usr/src/otp-src \
