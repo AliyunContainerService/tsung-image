@@ -79,4 +79,4 @@ EXPOSE 8091
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
-ENTRYPOINT ['/start.sh','tsung']
+CMD ['/start.sh','tsung']
