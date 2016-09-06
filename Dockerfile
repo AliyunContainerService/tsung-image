@@ -76,4 +76,6 @@ RUN apt-get update && \
 
 EXPOSE 8091
 
-ENTRYPOINT ["/usr/sbin/sshd", "-D", "-f", "/etc/ssh/sshd_config"]
+ADD start.sh /start.sh
+
+ENTRYPOINT ['/start.sh']
