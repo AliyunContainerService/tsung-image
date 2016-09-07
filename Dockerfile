@@ -74,13 +74,10 @@ RUN apt-get update && \
 	&& make install \
 	&& rm -rf /tmp/tsung*
 
-RUN mkdir -p /var/run/sshd && chmod 0700 /var/run/sshd
-
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
 
 EXPOSE 22
 EXPOSE 8091
-
 
 ENTRYPOINT ["/start.sh"]
