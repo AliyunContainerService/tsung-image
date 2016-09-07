@@ -6,15 +6,17 @@ fi
 mode="$1"
 
 if [ "$mode" == "single" ]
-  tusng -k start 
+  tusng -k start
 fi
 
 if [ "$mode" == "master" ]
+  /entry.sh;
   /usr/sbin/sshd -D -f /etc/ssh/sshd_config & >> /dev/null;
   tsung -k start
 fi
 
 if [ "$mode" == "slave" ]
+  /entry.sh;
   /usr/sbin/sshd -D -f /etc/ssh/sshd_config & >> /dev/null
   top -b
 fi
