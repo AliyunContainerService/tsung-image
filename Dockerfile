@@ -75,9 +75,12 @@ RUN apt-get update && \
 	&& rm -rf /tmp/tsung*
 
 RUN mkdir -p /var/run/sshd && chmod 0700 /var/run/sshd
-RUN /usr/sbin/sshd -d -f /etc/ssh/sshd_config &
+
+ADD start.sh /start.sh
+RUN chmod +x /start.sh
 
 EXPOSE 22
 EXPOSE 8091
 
-CMD ["tsung","-k","start"]
+
+CMD ["/start.sh"]
