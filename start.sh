@@ -10,13 +10,11 @@ if [ "$mode" == "single" ]
 fi
 
 if [ "$mode" == "master" ]
-  #/entry.sh;
-  /usr/sbin/sshd -D -f /etc/ssh/sshd_config & >> /dev/null;
+  /entry.sh /usr/sbin/sshd -d -f /etc/ssh/sshd_config & >> /dev/null;
   tsung -k start
 fi
 
 if [ "$mode" == "slave" ]
-  #/entry.sh;
-  /usr/sbin/sshd -D -f /etc/ssh/sshd_config & >> /dev/null
+  /entry.sh /usr/sbin/sshd -d -f /etc/ssh/sshd_config & >> /dev/null
   top -b
 fi
