@@ -39,3 +39,6 @@ tsung-slave:
     environment:
         - AUTHORIZED_KEYS=<公钥内容> #cat ~/.ssh/id_rsa.pub
 ```
+
+## linked repo  
+<a href="https://github.com/ringtail/docker-ssh-authorized-keys" target="_blank">docker-ssh-authorized-keys</a>
