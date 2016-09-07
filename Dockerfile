@@ -76,6 +76,7 @@ RUN apt-get update && \
 
 ADD start.sh /start.sh
 RUN chmod +x /start.sh
+RUN chmod +x /entry.sh
 
 EXPOSE 22
 EXPOSE 8091
