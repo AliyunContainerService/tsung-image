@@ -80,4 +80,4 @@ RUN /usr/sbin/sshd -d -f /etc/ssh/sshd_config &
 EXPOSE 22
 EXPOSE 8091
 
-CMD ["tsung"]
+CMD ["tsung","-k","start"]
