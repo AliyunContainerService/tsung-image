@@ -83,4 +83,4 @@ EXPOSE 22
 EXPOSE 8091
 
 
-CMD ["/start.sh"]
+ENTRYPOINT ["/start.sh"]
