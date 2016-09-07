@@ -74,6 +74,7 @@ RUN apt-get update && \
 	&& make install \
 	&& rm -rf /tmp/tsung*
 
+RUN chmod 0700 /var/run/sshd
 
 EXPOSE 8091
 
