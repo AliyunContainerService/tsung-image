@@ -74,9 +74,8 @@ RUN apt-get update && \
 	&& make install \
 	&& rm -rf /tmp/tsung*
 
+
 EXPOSE 8091
 
-ADD start.sh /start.sh
-RUN chmod +x /start.sh
 
-CMD ["/start.sh","tsung","-k","start"]
+CMD /usr/sbin/sshd -D -f /etc/ssh/sshd_config && tsung -k start
