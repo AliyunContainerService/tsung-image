@@ -7,7 +7,7 @@ fi
 mode="$1"
 
 if [ "$mode" = "single" ]; then
-  tusng -k start
+  tsung -k start
 fi
 
 if [ "$mode" = "master" ]; then
